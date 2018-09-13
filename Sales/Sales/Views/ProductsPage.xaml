@@ -5,6 +5,12 @@
              x:Class="Sales.Views.ProductsPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="{i18n:Translate Products}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="ic_action_add_circle_outline"
+                     Command="{Binding AddProductCommmand}">
+            
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout
             Padding="5"
@@ -29,14 +35,20 @@
                                     Source="{Binding ImageFullPath}">
                                     
                                 </Image>
-                                <Label
-                                    FontAttributes="Bold"
+                                <StackLayout 
                                     Grid.Column="1"
+                                     VerticalOptions="Center">
+                                    <Label
+                                    FontAttributes="Bold"                                  
                                     WidthRequest="100"
-                                    Text="{Binding Description}"
-                                    VerticalOptions="Center">
-                                    
-                                </Label>
+                                    Text="{Binding Description}">
+                                    </Label>
+                                    <Label
+                                    FontAttributes="Bold"
+                                    WidthRequest="100"
+                                    Text="{Binding Remarks}">
+                                    </Label>                                   
+                                </StackLayout>                                
                                 <Label
                                     HorizontalOptions="End"
                                     FontAttributes="Bold"
